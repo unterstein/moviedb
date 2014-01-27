@@ -1,12 +1,14 @@
 package neo4j.models;
 
 import neo4j.relations.Relations;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.neo4j.annotation.NodeEntity;
 import org.springframework.data.neo4j.annotation.RelatedTo;
 
 import java.util.Set;
 
 @NodeEntity
+@TypeAlias("Movie")
 public class Movie extends AbstractModel {
 
   public String name;

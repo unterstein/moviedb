@@ -5,6 +5,15 @@
 @main("Welcome to our movie db") {
 
   @actors.map { actor =>
-      @actor.name<br/>
+    <ul>
+      <li>
+        <h2>@actor.name</h2>
+        <ul>
+          @actor.movies.map { movie =>
+            <li>@movie.name</li>
+          }
+        </ul>
+      </li>
+    </ul>
   }
 }
