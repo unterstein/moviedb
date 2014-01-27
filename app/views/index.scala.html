@@ -1,7 +1,10 @@
-@(message: String)
+@(actors: java.util.Iterator[neo4j.models.Actor])
 
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@import scala.collection.JavaConversions._
+
+@main("Welcome to our movie db") {
+
+  @actors.map { actor =>
+      @actor.name<br/>
+  }
 }
