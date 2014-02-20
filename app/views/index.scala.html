@@ -1,16 +1,14 @@
-@(actors: java.util.Iterator[neo4j.models.Actor])
-
-@import scala.collection.JavaConversions._
+@(actors: java.util.List[neo4j.repositories.ActorRepository.LightActor])
 
 @main("Welcome to our movie db") {
 
   @actors.map { actor =>
     <ul>
       <li>
-        <h2>@actor.name</h2>
+        <h2>@actor.getName</h2>
         <ul>
-          @actor.movies.map { movie =>
-            <li>@movie.name</li>
+          @for(movieName: String <- actor.getMovies.iterator) {
+            <li>@movieName</li>
           }
         </ul>
       </li>

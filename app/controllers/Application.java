@@ -10,7 +10,7 @@ public class Application extends Controller {
 
   @Transactional
   public static Result index() {
-    return ok(index.render(Neo4JServiceProvider.get().actorRepository.findAll().iterator()));
+    return ok(index.render(Neo4JServiceProvider.get().actorRepository.findLightActors()));
   }
 
 }
