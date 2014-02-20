@@ -12,7 +12,7 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
-    "com.github.tuxBurner" %% "play-neo4jplugin" % "1.3.1"
+    "com.github.tuxBurner" %% "play-neo4jplugin" % "1.3.3"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
