@@ -14,7 +14,7 @@ public interface ActorRepository extends GraphRepository<Actor> {
 
   List<Actor> findByName(String name);
 
-  @Query("MATCH (actor: Actor)-[:" + Relations.ACTOR_MOVIE + "]-movie RETURN actor.name as name, collect(movie.name) as movies")
+  @Query("MATCH (actor: Actor)-[:" + Relations.ACTOR_MOVIE + "]->movie RETURN actor.name as name, collect(movie.name) as movies")
   List<LightActor> findLightActors();
 
   @QueryResult
